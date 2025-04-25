@@ -1,0 +1,22 @@
+{
+    "mcpServers": {
+        "filesystem": {
+            "command": "npx",
+            "args": [
+              "-y",
+              "@modelcontextprotocol/server-filesystem",
+              "/Users/pramudithah.rajadasa/Developer/mcp-demo/temp"
+            ]
+        },
+        "memory": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-memory"
+            ],
+            "env": {
+                "MEMORY_FILE_PATH": "/Users/pramudithah.rajadasa/Developer/mcp-demo/temp/memory.json"
+            }
+        }  
+    } 
+}
