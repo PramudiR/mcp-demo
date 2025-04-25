@@ -1,0 +1,22 @@
+{
+  "entities": [
+    {
+      "id": "0012",
+      "name": "Janet",
+      "observations": [
+        "likes self-development reading",
+        "Food Preference: Non-veg",
+        "Dessert Preference: Chocolate"
+      ]
+    },
+    {
+      "id": "0014",
+      "name": "Willium",
+      "observations": [
+        "likes outdoor exercise",
+        "Food Preference: Veg",
+        "Dessert Preference: Fruit"
+      ]
+    }
+  ]
+}
