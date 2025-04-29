@@ -24,6 +24,7 @@ load_dotenv()
 
 mcp_agent = None
 
+
 # Define a lifespan context manager
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -64,7 +65,9 @@ class AgentResponse(BaseModel):
     success: bool
 
 
-def verify_token(credentials: HTTPAuthorizationCredentials = Security(security)) -> bool:
+def verify_token(
+        credentials: HTTPAuthorizationCredentials = Security(security)
+) -> bool:
     """Verify the bearer token against environment variable."""
     expected_token = os.getenv("API_BEARER_TOKEN")
     if not expected_token:
@@ -127,6 +130,7 @@ async def pydantic_mcp_agent(
     request: AgentRequest,
     authenticated: bool = Depends(verify_token)
 ):
+    """Endpoint to handle agent requests."""
     try:
         # Fetch conversation history
         conversation_history = await fetch_conversation_history(request.session_id)
@@ -145,7 +149,7 @@ async def pydantic_mcp_agent(
             session_id=request.session_id,
             message_type="human",
             content=request.query
-        ) 
+        )        
 
         # Run the agent with conversation history
         result = await mcp_agent.run(
@@ -165,9 +169,9 @@ async def pydantic_mcp_agent(
         memory_messages = [
             {"role": "user", "content": request.query},
             {"role": "assistant", "content": result.data}
-        ]   
+        ]
 
-        return AgentResponse(success=True)
+        return memory_messages
 
     except Exception as e:
         print(f"Error processing agent request: {str(e)}")
