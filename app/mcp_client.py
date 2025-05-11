@@ -5,7 +5,7 @@ import shutil
 import json
 from contextlib import AsyncExitStack
 from typing import Any, List
-from pydantic_ai import Tool as PydanticTool
+from pydantic_ai import RunContext, Tool as PydanticTool
 from pydantic_ai.tools import ToolDefinition
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
@@ -127,6 +127,7 @@ class MCPServer:
             return await self.session.call_tool(tool.name, arguments=kwargs)
 
         async def prepare_tool(
+                ctx: RunContext,
                 tool_def: ToolDefinition) -> ToolDefinition | None:
             tool_def.parameters_json_schema = tool.inputSchema
             return tool_def
