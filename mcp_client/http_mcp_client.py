@@ -77,5 +77,5 @@ async def mcp_agent(query: str) -> str:
 
 if __name__ == "__main__":
     response = asyncio.run(mcp_agent(
-        "Find latest news about Vibe coding AI developments?"))
+        "Find top 10 famous breakfast spots around London"))
     print(response)
