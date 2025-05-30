@@ -5,7 +5,7 @@
             "args": [
               "-y",
               "@modelcontextprotocol/server-filesystem",
-              "/Users/pramudithah.rajadasa/Developer/mcp-demo/temp"
+              "/Users/pramudir/Developer/mcp-demo/temp"
             ]
         },
         "memory": {
@@ -15,7 +15,7 @@
                 "@modelcontextprotocol/server-memory"
             ],
             "env": {
-                "MEMORY_FILE_PATH": "/Users/pramudithah.rajadasa/Developer/mcp-demo/temp/memory.json"
+                "MEMORY_FILE_PATH": "/Users/pramudir/Developer/mcp-demo/temp/memory.json"
             }
         }  
     } 
