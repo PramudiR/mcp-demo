@@ -50,7 +50,7 @@ def create_tool_instance(tool: MCPTool, client) -> PydanticTool:
         return await client.call_tool(tool.name, arguments=kwargs)
 
     async def prepare_tool(
-            ctx: RunContext,
+            _ctx: RunContext,
             tool_def: ToolDefinition) -> ToolDefinition | None:
         tool_def.parameters_json_schema = tool.inputSchema
         return tool_def
@@ -77,5 +77,5 @@ async def mcp_agent(query: str) -> str:
 
 if __name__ == "__main__":
     response = asyncio.run(mcp_agent(
-        "Can you find any boots among the products?"))
+        "Find top 10 famous breakfast spots around London"))
     print(response)
