@@ -85,5 +85,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Contact
 
 Maintained by [PramudiR](https://github.com/PramudiR).
+Collab with [Apex-Tensor](https://github.com/PramudiR-Tensor).
 
 Feel free to open issues or reach out with questions.
