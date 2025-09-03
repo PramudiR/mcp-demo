@@ -68,6 +68,17 @@ This repository is a demo and does not have a single entry point or main script.
 
 Feel free to experiment with and modify the examples to fit your MCP server implementation or testing needs.
 
+Additionally, You can use following shell script to activate the environments. Here's an example code for the .envrc file
+```bash
+# Use existing Python venv
+source .venv/bin/activate
+
+# Use Node.js v22 via nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+nvm use 22
+```
+
 ## Contributing
 
 Contributions, issues, and feature requests are welcome!

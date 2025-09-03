@@ -215,7 +215,3 @@ test.pub
 
 # from MAC
 .DS_Store
-
-# Py Project
-pyproject.toml
-uv.lock
