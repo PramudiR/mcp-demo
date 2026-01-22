@@ -156,7 +156,7 @@ async def pydantic_mcp_agent(
         # Store agent's response
         await store_message(
             session_id=request.session_id,
-            message_type="ai",
+            message_type="ai",boo
             content=result.data,
             data={"request_id": request.request_id}
         )
